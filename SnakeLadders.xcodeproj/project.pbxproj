@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		053484B71FAD6CEB008567F4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 053484B61FAD6CEB008567F4 /* main.m */; };
+		053484BF1FAFD1A7008567F4 /* InputHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 053484BE1FAFD1A7008567F4 /* InputHandler.m */; };
+		053484C21FAFDE56008567F4 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 053484C11FAFDE56008567F4 /* Player.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,10 @@
 /* Begin PBXFileReference section */
 		053484B31FAD6CEB008567F4 /* SnakeLadders */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SnakeLadders; sourceTree = BUILT_PRODUCTS_DIR; };
 		053484B61FAD6CEB008567F4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		053484BD1FAFD1A7008567F4 /* InputHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InputHandler.h; sourceTree = "<group>"; };
+		053484BE1FAFD1A7008567F4 /* InputHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InputHandler.m; sourceTree = "<group>"; };
+		053484C01FAFDE56008567F4 /* Player.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		053484C11FAFDE56008567F4 /* Player.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,10 @@
 			isa = PBXGroup;
 			children = (
 				053484B61FAD6CEB008567F4 /* main.m */,
+				053484C01FAFDE56008567F4 /* Player.h */,
+				053484C11FAFDE56008567F4 /* Player.m */,
+				053484BD1FAFD1A7008567F4 /* InputHandler.h */,
+				053484BE1FAFD1A7008567F4 /* InputHandler.m */,
 			);
 			path = SnakeLadders;
 			sourceTree = "<group>";
@@ -120,6 +130,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				053484B71FAD6CEB008567F4 /* main.m in Sources */,
+				053484C21FAFDE56008567F4 /* Player.m in Sources */,
+				053484BF1FAFD1A7008567F4 /* InputHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

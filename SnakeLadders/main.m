@@ -16,10 +16,11 @@ int main(int argc, const char * argv[]) {
         BOOL gameOn = YES;
         Player *player = [[Player alloc]init];
 
-        NSLog(@"Welcome to Snake and Ladder - Command Line Version.\nPlease type r to roll.\nPlease type exit to terminate game.");
+        NSLog(@"Welcome to Snake and Ladder - Command Line Version.");
         
         while (gameOn) {
             
+            NSLog(@"Please type r to roll.\nPlease type exit to terminate game.");
             
             NSString* userInputRoll = [InputHandler userInput];
             
@@ -27,6 +28,11 @@ int main(int argc, const char * argv[]) {
                 gameOn = NO;
             } else if ([userInputRoll isEqualToString: @"r"]){
                 [player roll];
+                if (player.gameOver == YES){
+                    NSLog(@"You have reached the end, congrats!");
+                    break;
+    
+                } 
           
             }
             

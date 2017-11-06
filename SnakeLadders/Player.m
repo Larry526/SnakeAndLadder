@@ -15,21 +15,8 @@
     self = [super init];
     if (self) {
         _currentSquare = 0;
-//        NSMutableDictionary *gameLogic2 = [[NSMutableDictionary alloc]init];
-        [_gameLogic setObject:@14 forKey:@4];
-        [_gameLogic setObject:@31 forKey:@9];
-        [_gameLogic setObject:@7 forKey:@17];
-        [_gameLogic setObject:@38 forKey:@20];
-        [_gameLogic setObject:@84 forKey:@28];
-        [_gameLogic setObject:@59 forKey:@40];
-        [_gameLogic setObject:@67 forKey:@51];
-        [_gameLogic setObject:@81 forKey:@63];
-        [_gameLogic setObject:@60 forKey:@64];
-        [_gameLogic setObject:@26 forKey:@89];
-        [_gameLogic setObject:@73 forKey:@95];
-        [_gameLogic setObject:@78 forKey:@99];
-
-        
+        _gameLogic = @{@4:@14,@9:@31,@20:@38,@29:@84,@40:@59,@51:@67,@63:@81,@17:@7,@64:@60,@89:@26,@95:@75,@99:@78};
+        _gameOver = NO;
         
     }
     return self;
@@ -44,10 +31,18 @@
     NSLog(@"Your dice roll is %li", diceRoll);
     self.currentSquare += diceRoll;
     NSLog(@"You currently landed on square %li", self.currentSquare);
-    NSInteger convertedLogic = (NSInteger)[self.gameLogic objectForKey:[NSNumber numberWithInteger:self.currentSquare]];
-    NSLog(@"%li",convertedLogic);
-    if (self.currentSquare == convertedLogic) {
-        self.currentSquare = convertedLogic;
+    
+    NSNumber *currentSquareObject = @(self.currentSquare);
+    
+
+    if ([self.gameLogic objectForKey:currentSquareObject]) {
+        self.currentSquare = [self.gameLogic[currentSquareObject] integerValue];
+        NSLog(@"You landed on a ladder/snake tile, and is moved to square %li!", self.currentSquare);
+
+    }
+    
+    if (self.currentSquare > 101) {
+        self.gameOver = YES;
     }
     
     

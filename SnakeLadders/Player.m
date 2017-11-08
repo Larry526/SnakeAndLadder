@@ -36,12 +36,16 @@
     
 
     if ([self.gameLogic objectForKey:currentSquareObject]) {
+        if (self.currentSquare < [self.gameLogic[currentSquareObject] integerValue]) {
+            NSLog(@"Stariway to heaven!");
+        } else {
+            NSLog(@"You are sliding down a snake tail!");
+        }
+        NSLog(@"You jumped from %li to %ld!", self.currentSquare, [self.gameLogic[currentSquareObject] integerValue]);
         self.currentSquare = [self.gameLogic[currentSquareObject] integerValue];
-        NSLog(@"You landed on a ladder/snake tile, and is moved to square %li!", self.currentSquare);
-
     }
     
-    if (self.currentSquare > 101) {
+    if (self.currentSquare > 99) {
         self.gameOver = YES;
     }
     

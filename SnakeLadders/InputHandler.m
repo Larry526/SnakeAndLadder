@@ -12,8 +12,8 @@
 
 +(NSString *)userInput {
     
-    char answerNumber[5];
-    fgets(answerNumber, 5, stdin);
+    char answerNumber[255];
+    fgets(answerNumber, 255, stdin);
     NSString *inputAnswer = [NSString stringWithUTF8String:answerNumber];
     NSString *parsedInputAnswer = [inputAnswer stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     return parsedInputAnswer;

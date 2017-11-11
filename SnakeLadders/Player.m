@@ -26,30 +26,34 @@
 
 
 -(void)roll {
-    
     NSInteger diceRoll = (NSInteger)arc4random_uniform(6) + 1;
-    NSLog(@"Your dice roll is %li", diceRoll);
+    NSLog(@"%@: Your dice roll is %li", self.name, diceRoll);
     self.currentSquare += diceRoll;
-    NSLog(@"You currently landed on square %li", self.currentSquare);
+    NSLog(@"%@: You currently landed on square %li", self.name, self.currentSquare);
     
     NSNumber *currentSquareObject = @(self.currentSquare);
     
 
     if ([self.gameLogic objectForKey:currentSquareObject]) {
         if (self.currentSquare < [self.gameLogic[currentSquareObject] integerValue]) {
-            NSLog(@"Stariway to heaven!");
+            NSLog(@"%@: Stariway to heaven!",self.name);
         } else {
-            NSLog(@"You are sliding down a snake tail!");
+            NSLog(@"%@: You are sliding down a snake tail!", self.name);
         }
-        NSLog(@"You jumped from %li to %ld!", self.currentSquare, [self.gameLogic[currentSquareObject] integerValue]);
+        NSLog(@"%@: You jumped from %li to %ld!", self.name, self.currentSquare, [self.gameLogic[currentSquareObject] integerValue]);
         self.currentSquare = [self.gameLogic[currentSquareObject] integerValue];
+        
+ 
     }
-    
+}
+
+-(void)gameOverState {
     if (self.currentSquare > 99) {
         self.gameOver = YES;
     }
-    
-    
 }
+    
+    
+
 
 @end

@@ -13,8 +13,10 @@
 @property (nonatomic, assign) NSInteger currentSquare;
 @property (nonatomic, strong) NSDictionary *gameLogic;
 @property (nonatomic) BOOL gameOver;
+@property (nonatomic, strong) NSString *name;
 
 
 -(void) roll;
+-(void) gameOverState;
 
 @end
